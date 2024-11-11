@@ -1265,7 +1265,7 @@ textarea:focus {
                 <li>
                   Guide to use
                   <strong
-                    ><a href="https://hackyvirus.github.io/MOOWR/moowr-need-help.html" style="text-decoration: underline"
+                    ><a href="https://hackyvirus.github.io/MOOWR-BETA-VERSION/need-help.html" style="text-decoration: underline"
                       >Duty Saving Calculator</a
                     ></strong
                   >
@@ -1279,7 +1279,7 @@ textarea:focus {
                 </li> -->
                 <li>
                   <strong
-                    ><a href="https://hackyvirus.github.io/MOOWR/moowr-faq.html" style="text-decoration: underline"
+                    ><a href="https://hackyvirus.github.io/MOOWR-BETA-VERSION/faq.html" style="text-decoration: underline"
                       >FAQs</a
                     ></strong
                   >
@@ -3079,81 +3079,53 @@ textarea:focus {
       <!-- <a href="https://optitaxs.com/moowr-need-help/">Need Help?</a>
       <a href="https://optitaxs.com/moowr-scheme-faqs/">FAQs</a> -->
 
-      <a href="https://hackyvirus.github.io/MOOWR/moowr-need-help.html">Need Help?</a>
-      <a href="https://hackyvirus.github.io/MOOWR/moowr-faq.html">FAQs</a>
+      <a href="https://hackyvirus.github.io/MOOWR-BETA-VERSION/need-help.html">Need Help?</a>
+      <a href="https://hackyvirus.github.io/MOOWR-BETA-VERSION/faq.html">FAQs</a>
     </div>
     <div id="custom-feedback-modal" class="modal-container">
         <div class="modal-box">
-          <form action="https://docs.google.com/forms/d/e/1FAIpQLSe4a0T6nnQLs8Y45FcC8yPI5b9HPIH3olqr2Ggs3SPXQQNDqg/formResponse" id="feedback-form" post class="feedback-form">
+          <form action="http://127.0.0.1:8080/submit-feedback" method="POST" id="feedback-form" class="feedback-form">
             <h2 class="form-title">We'd Love Your Feedback!</h2>
           
             <!-- Name Field -->
             <div class="form-group2">
-              <label for="user-name" class="form-label">Name</label>
-              <input autocomplete="off"
-                type="text"
-                id="user-name"
-                name="entry.122187081"
-                class="form-input"
-                placeholder="Enter your name"
-                required
-              />
+                <label for="user-name" class="form-label">Name</label>
+                <input autocomplete="off" type="text" id="user-name" name="name" class="form-input" placeholder="Enter your name" required />
             </div>
-          
+        
             <div class="form-group2">
-              <label for="user-email" class="form-label">Email</label>
-              <input autocomplete="off"
-                type="email"
-                id="user-email"
-                name="entry.260455679"
-                class="form-input"
-                placeholder="Enter your email"
-                required
-              />
+                <label for="user-email" class="form-label">Email</label>
+                <input autocomplete="off" type="email" id="user-email" name="email" class="form-input" placeholder="Enter your email" required />
             </div>
-          
+        
             <div class="form-group">
-              <label class="form-label">How was your experience with MOOWR Utility?</label>
-              <div class="input-q">
-                <label><input autocomplete="off" type="checkbox" name="entry.2127226797_sentinel" value="Great"> Great</label>
-                <label><input autocomplete="off" type="checkbox" name="entry.2127226797_sentinel" value="Good"> Good</label>
-                <label><input autocomplete="off" type="checkbox" name="entry.2127226797_sentinel" value="Average"> Average</label>
-                <label><input autocomplete="off" type="checkbox" name="entry.2127226797_sentinel" value="Needs Improvement"> Needs Improvement</label>
-              </div>
+                <label class="form-label">How was your experience with MOOWR Utility?</label>
+                <div class="input-q">
+                    <label><input autocomplete="off" type="checkbox" name="experience" value="Great"> Great</label>
+                    <label><input autocomplete="off" type="checkbox" name="experience" value="Good"> Good</label>
+                    <label><input autocomplete="off" type="checkbox" name="experience" value="Average"> Average</label>
+                    <label><input autocomplete="off" type="checkbox" name="experience" value="Needs Improvement"> Needs Improvement</label>
+                </div>
             </div>
-          
+        
             <div class="form-group">
-              <label for="user-feedback" class="form-label">Additional Feedback</label>
-              <textarea
-                id="user-feedback"
-                name="entry.1834863445"
-                class="form-input"
-                rows="4"
-                placeholder="Share your thoughts..."
-                required
-              ></textarea>
+                <label for="user-feedback" class="form-label">Additional Feedback</label>
+                <textarea id="user-feedback" name="feedback" class="form-input" rows="4" placeholder="Share your thoughts..." required></textarea>
             </div>
-          
+        
             <div class="form-group">
-              <label for="newsletter-opt-in" class="form-label">Subscribe to our Newsletter?</label>
-              <div class="checkbox-wrapper">
-                <input autocomplete="off"
-                  type="checkbox"
-                  id="newsletter-opt-in"
-                  name="entry.1684571852_sentinel"
-                  class="form-checkbox"
-                />
-                <label for="newsletter-opt-in">Yes, I want to stay updated!</label>
-              </div>
+                <label for="newsletter-opt-in" class="form-label">Subscribe to our Newsletter?</label>
+                <div class="checkbox-wrapper">
+                    <input autocomplete="off" type="checkbox" id="newsletter-opt-in" name="subscribeNewsletter" class="form-checkbox" />
+                    <label for="newsletter-opt-in">Yes, I want to stay updated!</label>
+                </div>
             </div>
-          
+        
             <div class="submit-skip">
-              <div class="skip-btn" id="skip">Skip and Download</div>
-              <button type="submit" id="submit-download" class="submit-btn">Submit & Download Report</button>
+                <div class="skip-btn" id="skip">Skip and Download</div>
+                <button type="submit" id="submit-download" class="submit-btn">Submit & Download Report</button>
             </div>
-          
-          </form>
-          
+        </form>
           
         </div>
       </div>
