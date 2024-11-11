@@ -1,9 +1,9 @@
 function formatNumber(id) {
   const input = document.getElementById(id);
-  
+
   // Allow only numbers and a single decimal point
   let value = input.value.replace(/[^\d.]/g, "");
-  
+
   // Ensure only one decimal point exists
   if ((value.match(/\./g) || []).length > 1) {
     value = value.replace(/\.(?=.*\.)/g, "");
@@ -18,7 +18,7 @@ function formatNumber(id) {
   if (otherNumbers !== "") {
     lastThree = "," + lastThree;
   }
-  let formattedValue = 
+  let formattedValue =
     otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
 
   // Add the decimal part back if it exists
@@ -29,7 +29,6 @@ function formatNumber(id) {
   // Set the formatted value back to the input
   input.value = formattedValue;
 }
-
 
 function formatNumberPDF(valuePDF) {
   // Convert the value to a string
@@ -91,8 +90,8 @@ selectElements = selectElements.map((id) => document.getElementById(id));
 selectElements.forEach((e, index) => {
   e.addEventListener("change", () => {
     if (e.value == "others") {
-      console.log(e.value)
-      console.log(index)
+      console.log(e.value);
+      console.log(index);
       document.getElementById(`userInputrate${index + 1}`).style.display =
         "block";
     } else {
@@ -901,49 +900,11 @@ async function updatePDFAndDownload(
     .addEventListener("click", function () {
       document.getElementById("custom-feedback-modal").style.display = "none";
       downloadPDF(pdfUrl);
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     });
 
-  document
-    .getElementById("feedback-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const userName = document.getElementById("user-name").value;
-      const userEmail = document.getElementById("user-email").value;
-      const experience = Array.from(
-        document.querySelectorAll('input[name="experience"]:checked')
-      ).map((el) => el.value);
-      const userFeedback = document.getElementById("user-feedback").value;
-      const newsletterOptIn =
-        document.getElementById("newsletter-opt-in").checked;
-
-      jQuery.ajax({
-        url: ajax_object.ajax_url,
-        type: "POST",
-        data: {
-          action: "submit_feedback",
-          security: ajax_object.nonce,
-          name: userName,
-          email: userEmail,
-          experience: experience,
-          feedback: userFeedback,
-          newsletter_opt_in: newsletterOptIn ? 1 : 0,
-        },
-        success: function (response) {
-          if (response.success) {
-            alert(response.data);
-            document.getElementById("custom-feedback-modal").style.display =
-              "none";
-            downloadPDF(pdfUrl);
-          } else {
-            alert("There was an error submitting the form. Please try again.");
-          }
-        },
-        error: function () {
-          alert("An unexpected error occurred. Please try again.");
-        },
-      });
-    });
 }
 
 // Function to handle PDF download
